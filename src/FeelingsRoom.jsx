@@ -6,7 +6,7 @@ const YOUR_NAME = "Gopi";
 // ─── NOTIFICATION CONFIG ─────────────────────────────────────────────────────
 // Put your phone number here (with country code, no + or spaces)
 // Example: "919876543210"
-const GOPI_PHONE = "8072031588";
+const GOPI_PHONE = "+91 8072031588";
 
 // ─── MOOD DATA ───────────────────────────────────────────────────────────────
 // Each mood has: icon, label, color accent, bg tint, letter, song, activities
