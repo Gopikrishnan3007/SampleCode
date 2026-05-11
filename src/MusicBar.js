@@ -108,7 +108,7 @@ export default function MusicBar() {
         audioRef.current.play().catch(e => console.log("Playback blocked:", e));
       }
     }
-  }, [songIdx]);
+  }, [songIdx, playing]);
 
   useEffect(() => {
     if (audioRef.current) {

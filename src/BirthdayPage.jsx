@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 const HER_NAME = "Ranjani";
 const YOUR_NAME = "Gopi";
 const HER_AGE = 24;               // ← her age this birthday
-
 const LETTER_LINES = [
   `Hey paps,`,
   ``,
@@ -340,41 +339,21 @@ export default function BirthdayPage({ onEnter }) {
   const [showCursor, setShowCursor] = useState(true);
   const [confetti, setConfetti] = useState([]);
 
-  const [songIdx, setSongIdx] = useState(0);
-  const [playing, setPlaying] = useState(true);
-  const [vol, setVol] = useState(70);
   const audioRef = useRef(null);
 
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.load();
-      if (playing) {
-        audioRef.current.play().catch(e => console.log("Playback prevented:", e));
-      }
-    }
-  }, [songIdx]);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      if (playing) {
-        audioRef.current.play().catch(e => console.log("Playback prevented:", e));
-      } else {
-        audioRef.current.pause();
-      }
-    }
-  }, [playing]);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = vol / 100;
-    }
-  }, [vol]);
-
-  useEffect(() => {
-    const t = setTimeout(() => handleNameClick(), 3200);
+    if (nameOut) return;
+    const t = setTimeout(() => {
+      setNameOut(true);
+      spawnConfetti();
+      setTimeout(() => {
+        setPhase("content");
+        setContentVisible(true);
+        startLetter();
+      }, 1000);
+    }, 3200);
     return () => clearTimeout(t);
-  }, []);
+  }, [nameOut]);
 
   const handleNameClick = () => {
     if (nameOut) return;
@@ -492,7 +471,7 @@ export default function BirthdayPage({ onEnter }) {
         </div>
       </div>
 
-      <audio ref={audioRef} src={SONGS[songIdx].url} autoPlay={playing} loop />
+      <audio ref={audioRef} src={SONGS[0].url} autoPlay loop />
 
     </>
   );

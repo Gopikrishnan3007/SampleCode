@@ -4,11 +4,10 @@
 //  Usage:  <KavithaiCorner onBack={() => navigate('/home')} />
 // ============================================================
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 // ─── CONFIG — REPLACE WITH YOUR OWN KAVITHAI ────────────────────────────────
 const YOUR_NAME = "Gopi";
-const HER_NAME  = "Ranjani";
 
 // Categories — feel free to add/remove
 const CATEGORIES = ["அனைத்தும்", "காதல்", "பாரதி", "ஊக்கம்", "வலி", "கண்கள்", "இரவு", "பிறந்தநாள்"];

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const HER_NAME = "Ranjani";
 const YOUR_NAME = "Gopi";
 const LOVE_SINCE = "2022-05-13";
-const HER_PHOTO = "https://i.imgur.com/2ZQYjTt.jpg";
+
 
 // ─── CSS ───────────────────────────────────────────────────────────────────
 const css = `

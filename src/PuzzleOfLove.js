@@ -4,11 +4,10 @@
 //  Import: import PuzzleOfLove from './PuzzleOfLove';
 // ============================================================
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 // ─── CONFIG — CHANGE ALL OF THESE ───────────────────────────────────────────
 
-const HER_NAME = "Priya";
 const YOUR_NAME = "Arjun";
 
 // GAME 1 — Quiz questions. Only she can answer these.
@@ -390,7 +389,7 @@ function ScrambleGame({ onComplete }) {
     }
   };
 
-  const usedIds = new Set(answer.map(t=>t.id));
+  
 
   return (
     <div>
