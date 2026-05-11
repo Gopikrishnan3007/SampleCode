@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 const HER_NAME = "Ranjani";
 const YOUR_NAME = "Gopi";
 const HER_AGE = 24;               // ← her age this birthday
-const LOVE_SINCE = "2022-05-13";   // ← your start date
 
 const LETTER_LINES = [
   `Hey paps,`,
